@@ -70,7 +70,7 @@ public class QualifierRunner implements CommandLineRunner {
         String finalSql = sqlSolutionService.resolveFinalSql(regNo);
         log.info("Resolved final SQL (length {} chars).", finalSql.length());
 
-        // Optionally store the SQL locally (as the brief suggests storing result)
+        // Store SQL locally (as per requirement)
         Path out = Path.of("solution-final.sql");
         Files.writeString(out, finalSql);
         log.info("Stored final SQL at {}", out.toAbsolutePath());
@@ -78,9 +78,8 @@ public class QualifierRunner implements CommandLineRunner {
         // 3) Submit the solution with JWT in Authorization header
         SubmitRequest submit = new SubmitRequest(finalSql);
 
-        // Brief says use JWT in Authorization header; commonly "Bearer <token>"
-        // If the endpoint expects raw token, change to set("Authorization", resp.getAccessToken()).
-        String authValue = "Bearer " + resp.getAccessToken();
+        // FIX: Use raw token (no "Bearer ")
+        String authValue = resp.getAccessToken();
 
         String submitResponse = webClient.post()
                 .uri(testWebhookUrl)

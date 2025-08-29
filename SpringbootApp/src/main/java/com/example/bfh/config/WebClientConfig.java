@@ -1,5 +1,3 @@
-package org.example.config;
-
 package com.example.bfh.config;
 
 import org.springframework.context.annotation.Bean;
@@ -23,4 +21,3 @@ public class WebClientConfig {
                 .build();
     }
 }
-
