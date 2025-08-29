@@ -1,15 +1,15 @@
 app:
   candidate:
     name: "L Shravya"
-    email: "you@example.com"
-    regNo: "REG12346"  # <-- change this
+    email: "shravya.l2022@vitstudent.ac.in"
+    regNo: "22BCE0804"
   endpoints:
     generateWebhook: "https://bfhldevapigw.healthrx.co.in/hiring/generateWebhook/JAVA"
     testWebhook: "https://bfhldevapigw.healthrx.co.in/hiring/testWebhook/JAVA"
 
 spring:
   main:
-    web-application-type: none   # no web server needed
+    web-application-type: none # no web server needed
 logging:
   level:
     root: INFO
